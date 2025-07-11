@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MC Management Productions - Impulsamos tu talento con servicios de manejo de artistas, creación de contenido y producción audiovisual." />
   <title>MC Management Productions</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -15,6 +16,26 @@
       scroll-behavior: smooth;
     }
     
+    /* Fondo oscuro para la card de servicio */
+    .service-card {
+      position: relative;
+      /* ...otros estilos existentes... */
+    }
+
+    .service-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.7); /* Opacidad más alta para oscurecer */
+      z-index: 1;
+      border-radius: 0.5rem; /* igual que rounded-lg */
+    }
+
+    .service-card > * {
+      position: relative;
+      z-index: 2;
+    }
+
     .gradient-bg {
       background: linear-gradient(135deg, #282F44 0%, #1a1f2e 100%);
     }
@@ -131,525 +152,532 @@
   </style>
 </head>
 <body class="bg-[#ECECEC] text-[#282F44]">
-
-  <!-- Header -->
-  <header class="gradient-bg text-white fixed w-full top-0 z-50 shadow-lg">
-    <div class="container mx-auto px-6 py-4">
-      <div class="flex justify-between items-center">
-        <div class="flex items-center space-x-2">
-          <div class="w-10 h-10 rounded-full bg-[#E6AF2E] flex items-center justify-center">
-            <img src="img/LOGO.png" alt="">
-          </div>
-          <h1 class="text-2xl font-bold">MC <span class="golden-text">Management</span></h1>
-        </div>
-        
-        <!-- Mobile menu button -->
-        <div class="md:hidden">
-          <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-white focus:outline-none">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-          </button>
-        </div>
-        
-        <!-- Desktop Navigation -->
-        <nav class="hidden md:block">
-          <ul class="flex space-x-8">
-            <li><a href="#inicio" class="nav-link text-white hover:text-[#F5D061]">Inicio</a></li>
-            <li><a href="#servicios" class="nav-link text-white hover:text-[#F5D061]">Servicios</a></li>
-            <li><a href="#videos" class="nav-link text-white hover:text-[#F5D061]">Videos</a></li>
-            <li><a href="#equipo" class="nav-link text-white hover:text-[#F5D061]">Equipo</a></li>
-            <li><a href="#talento" class="nav-link text-white hover:text-[#F5D061]">Talento</a></li>
-            <li><a href="#contacto" class="nav-link text-white hover:text-[#F5D061]">Contacto</a></li>
-          </ul>
-        </nav>
-      </div>
-      
-      <!-- Mobile Navigation -->
-      <div x-show="mobileMenuOpen" @click.away="mobileMenuOpen = false" class="md:hidden mt-4 py-4 border-t border-[#3a455e]">
-        <ul class="space-y-4">
-          <li><a href="#inicio" class="block text-white hover:text-[#F5D061]">Inicio</a></li>
-          <li><a href="#servicios" class="block text-white hover:text-[#F5D061]">Servicios</a></li>
-          <li><a href="#videos" class="block text-white hover:text-[#F5D061]">Videos</a></li>
-          <li><a href="#equipo" class="block text-white hover:text-[#F5D061]">Equipo</a></li>
-          <li><a href="#talento" class="block text-white hover:text-[#F5D061]">Talento</a></li>
-          <li><a href="#contacto" class="block text-white hover:text-[#F5D061]">Contacto</a></li>
-        </ul>
-      </div>
-    </div>
-  </header>
-
-  <!-- Hero Section -->
-  <section id="inicio" class="pt-32 pb-20 relative overflow-hidden">
-    <div class="absolute inset-0 z-0">
-      <div class="absolute inset-0 bg-[#282F44] opacity-90"></div>
-      <!-- Aquí iría una imagen de fondo dinámica -->
-      <div class="absolute inset-0 bg-gradient-to-r from-[#282F44] to-transparent"></div>
-    </div>
-    
-    <div class="container mx-auto px-6 relative z-10">
-      <div class="flex flex-col md:flex-row items-center">
-        <div class="md:w-1/2 mb-12 md:mb-0">
-          <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            <span class="text-[#282F44]">Impulsamos</span> <span class="golden-text">tu talento</span>
-          </h2>
-          <p class="text-lg md:text-xl mb-8 text-gray-700">
-            Somos especialistas en manejo de artistas, creación de contenido y producción audiovisual. 
-            Transformamos ideas en realidades impactantes.
-          </p>
-          <div class="flex space-x-4">
-            <a href="#contacto" class="bg-[#E6AF2E] hover:bg-[#F5D061] text-[#282F44] font-bold py-3 px-6 rounded-full transition">
-              Contáctanos
-            </a>
-            <a href="#servicios" class="border-2 border-[#282F44] hover:bg-[#282F44] hover:text-white text-[#282F44] font-bold py-3 px-6 rounded-full transition">
-              Nuestros servicios
-            </a>
-          </div>
-        </div>
-        
-        <div class="md:w-1/2 flex justify-center">
-          <!-- Espacio para imagen representativa o slider -->
-          <div class="flex items-center justify-center">
-            <img src="img/LOGO.png" alt="" class="shadow-2xl shadow-[#E6AF2E]/40 rounded-full" style="width: 300px;">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Video Showcase -->
-  <section id="videos" class="py-16 bg-white">
-    <div class="container mx-auto px-6">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Nuestro <span class="golden-text">Trabajo</span></h2>
-        <div class="w-20 h-1 bg-[#E6AF2E] mx-auto"></div>
-      </div>
-      
-      <div class="grid md:grid-cols-2 gap-8 mb-12">
-        <div class="video-thumbnail hover-grow">
-          <div class="aspect-w-16 aspect-h-9 bg-gray-300 rounded-lg overflow-hidden">
-            <!-- Espacio para thumbnail del video -->
-            <div class="flex items-center justify-center">
-              <video src="video/TRAILER_1.mp4" autoplay muted class="rounded-lg w-full h-auto"></video>
+  <div x-data="{ mobileMenuOpen: false }">
+    <!-- Header -->
+    <header class="gradient-bg text-white fixed w-full top-0 z-50 shadow-lg">
+      <div class="container mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+          <div class="flex items-center space-x-2">
+            <div class="w-10 h-10 rounded-full bg-[#E6AF2E] flex items-center justify-center">
+              <img src="img/LOGO.png" alt="">
             </div>
+            <h1 class="text-2xl font-bold">MC <span class="golden-text">Management</span></h1>
           </div>
-        </div>
-        
-        <div class="video-thumbnail hover-grow">
-          <div class="aspect-w-16 aspect-h-9 bg-gray-300 rounded-lg overflow-hidden">
-            <!-- Espacio para thumbnail del video -->
-            <div class="flex items-center justify-center" style="height: 337px;">
-              <video src="video/PRODUCCION.MOV" autoplay muted class="rounded-lg w-full h-auto"></video>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="text-center">
-        <a href="https://www.youtube.com/" target="_blank" class="inline-flex items-center bg-[#282F44] hover:bg-[#1a1f2e] text-white font-bold py-3 px-6 rounded-full transition">
-          <i class="fab fa-youtube mr-2"></i> Ver más en YouTube
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Servicios -->
-  <section id="servicios" class="py-16 gradient-bg text-white">
-    <div class="container mx-auto px-6">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Nuestros <span class="golden-text">Servicios</span></h2>
-        <div class="w-20 h-1 bg-[#E6AF2E] mx-auto"></div>
-        <p class="max-w-2xl mx-auto mt-4 text-[#ECECEC]">
-          Ofrecemos soluciones integrales para potenciar tu presencia artística y digital.
-        </p>
-      </div>
-      
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="service-card p-8 rounded-lg shadow-lg hover:shadow-2xl hover:border-[#F5D061] transition-all duration-300 bg-white border-l-4 border-[#E6AF2E]">
-          <div class="w-14 h-14 bg-[#E6AF2E] rounded-full flex items-center justify-center mb-6">
-            <i class="fas fa-microphone text-2xl text-white"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-3 text-[#282F44]">Manejo de Artistas</h3>
-          <p class="text-gray-700">
-            Desarrollo estratégico de carreras artísticas con enfoque personalizado y crecimiento sostenible.
-          </p>
-        </div>
-        
-        <div class="service-card p-8 rounded-lg shadow-lg hover-grow">
-          <div class="w-14 h-14 bg-[#E6AF2E] rounded-full flex items-center justify-center mb-6">
-            <i class="fas fa-hashtag text-2xl text-white"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-3">Manejo de Redes Sociales</h3>
-          <p class="text-gray-600">
-            Estrategias de contenido y crecimiento orgánico para maximizar tu impacto en plataformas digitales.
-          </p>
-        </div>
-        
-        <div class="service-card p-8 rounded-lg shadow-lg hover-grow">
-          <div class="w-14 h-14 bg-[#E6AF2E] rounded-full flex items-center justify-center mb-6">
-            <i class="fas fa-photo-video text-2xl text-white"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-3">Creación de Contenido</h3>
-          <p class="text-gray-600">
-            Producción de material audiovisual de alta calidad que cuenta tu historia de manera auténtica.
-          </p>
-        </div>
-        
-        <div class="service-card p-8 rounded-lg shadow-lg hover-grow">
-          <div class="w-14 h-14 bg-[#E6AF2E] rounded-full flex items-center justify-center mb-6">
-            <i class="fas fa-film text-2xl text-white"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-3">Producciones Audiovisuales</h3>
-          <p class="text-gray-600">
-            Realización profesional de videos musicales, comerciales y contenido para redes sociales.
-          </p>
-        </div>
-        
-        <div class="service-card p-8 rounded-lg shadow-lg hover-grow">
-          <div class="w-14 h-14 bg-[#E6AF2E] rounded-full flex items-center justify-center mb-6">
-            <i class="fas fa-paint-brush text-2xl text-white"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-3">Dirección Creativa</h3>
-          <p class="text-gray-600">
-            Conceptualización y desarrollo de identidades visuales únicas para proyectos artísticos.
-          </p>
-        </div>
-        
-        <div class="service-card p-8 rounded-lg shadow-lg hover-grow">
-          <div class="w-14 h-14 bg-[#E6AF2E] rounded-full flex items-center justify-center mb-6">
-            <i class="fas fa-pen-fancy text-2xl text-white"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-3">Guionismo</h3>
-          <p class="text-gray-600">
-            Creación de narrativas impactantes para tus proyectos audiovisuales y campañas.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CEO Spotlight -->
-  <section class="py-24 bg-[#ECECEC]">
-    <div class="container mx-auto px-6">
-      <div class="flex flex-col md:flex-row items-center bg-white rounded-2xl shadow-xl overflow-hidden min-h-[500px]">
-        <div class="md:w-1/3">
-          <!-- Espacio para foto de Mitzy Coreano -->
-          <!-- Carrusel de imágenes CEO -->
-          <div x-data="{
-              images: ['img/jefa1.PNG', 'img/jefa2.PNG'],
-              active: 0,
-              interval: null,
-              next() { this.active = (this.active + 1) % this.images.length },
-              prev() { this.active = (this.active - 1 + this.images.length) % this.images.length },
-              start() { this.interval = setInterval(() => this.next(), 3000) },
-              stop() { clearInterval(this.interval) }
-            }"
-            x-init="start()"
-            @mouseenter="stop()" @mouseleave="start()"
-            class="relative flex items-center justify-center bg-gradient-to-br from-[#E6AF2E] to-[#F5D061]"
-            style="height: 37rem;">
-
-            <template x-for="(img, i) in images" :key="i">
-              <img x-show="active === i"
-                  :src="img"
-                  class="absolute inset-0 w-full h-full object-cover rounded-xl transition-all duration-700"
-                  x-transition:enter="opacity-0"
-                  x-transition:enter-start="opacity-0"
-                  x-transition:enter-end="opacity-100"
-                  x-transition:leave="opacity-100"
-                  x-transition:leave-start="opacity-100"
-                  x-transition:leave-end="opacity-0"
-              />
-            </template>
-
-            <!-- Botón anterior -->
-            <button @click="prev" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-[#E6AF2E] text-[#282F44] rounded-full p-2 shadow-lg">
-              <i class="fas fa-chevron-left"></i>
-            </button>
-            <!-- Botón siguiente -->
-            <button @click="next" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-[#E6AF2E] text-[#282F44] rounded-full p-2 shadow-lg">
-              <i class="fas fa-chevron-right"></i>
+          
+          <!-- Mobile menu button -->
+          <div class="md:hidden">
+            <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-white focus:outline-none">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
             </button>
           </div>
-        </div>
-        <div class="md:w-2/3 p-10 md:p-16 flex flex-col justify-center">
-          <h3 class="text-3xl font-bold mb-2 golden-text">Mitzy Coreano</h3>
-          <h4 class="text-2xl font-semibold mb-6 text-[#282F44]">Fundadora & CEO</h4>
-          <p class="text-gray-600 mb-6 text-lg">
-            Con más de 10 años de experiencia en la industria del entretenimiento, Mitzy ha dedicado su carrera 
-            al desarrollo de talentos y la creación de contenido innovador. Su visión estratégica y pasión por 
-            el arte han posicionado a MC Management como una de las empresas líderes en producción creativa.
-          </p>
-          <div class="mb-8">
-            <h5 class="text-xl font-bold text-[#E6AF2E] mb-2">Logros destacados</h5>
-            <ul class="list-disc list-inside text-gray-700 text-base">
-              <li>Más de 100 proyectos audiovisuales realizados.</li>
-              <li>Reconocida por su liderazgo en la industria creativa.</li>
-              <li>Mentora de nuevos talentos latinoamericanos.</li>
+          
+          <!-- Desktop Navigation -->
+          <nav class="hidden md:block">
+            <ul class="flex space-x-8">
+              <li><a href="#inicio" class="nav-link text-white hover:text-[#F5D061]">Inicio</a></li>
+              <li><a href="#servicios" class="nav-link text-white hover:text-[#F5D061]">Servicios</a></li>
+              <li><a href="#videos" class="nav-link text-white hover:text-[#F5D061]">Videos</a></li>
+              <li><a href="#equipo" class="nav-link text-white hover:text-[#F5D061]">Equipo</a></li>
+              <li><a href="#talento" class="nav-link text-white hover:text-[#F5D061]">Talento</a></li>
+              <li><a href="#contacto" class="nav-link text-white hover:text-[#F5D061]">Contacto</a></li>
             </ul>
-          </div>
-          <blockquote class="italic text-[#282F44] text-lg mb-8 border-l-4 border-[#E6AF2E] pl-4">
-            "El arte es el puente que conecta sueños con realidades."
-          </blockquote>
-          <div class="flex space-x-4">
-            <a href="#" class="text-[#282F44] hover:text-[#E6AF2E]">
-              <i class="fab fa-linkedin-in text-xl"></i>
-            </a>
-            <a href="#" class="text-[#282F44] hover:text-[#E6AF2E]">
-              <i class="fab fa-instagram text-xl"></i>
-            </a>
-            <a href="#" class="text-[#282F44] hover:text-[#E6AF2E]">
-              <i class="fas fa-envelope text-xl"></i>
-            </a>
-          </div>
+          </nav>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div x-show="mobileMenuOpen" @click.away="mobileMenuOpen = false" class="md:hidden mt-4 py-4 border-t border-[#3a455e]">
+          <ul class="space-y-4">
+            <li><a href="#inicio" class="block text-white hover:text-[#F5D061]">Inicio</a></li>
+            <li><a href="#servicios" class="block text-white hover:text-[#F5D061]">Servicios</a></li>
+            <li><a href="#videos" class="block text-white hover:text-[#F5D061]">Videos</a></li>
+            <li><a href="#equipo" class="block text-white hover:text-[#F5D061]">Equipo</a></li>
+            <li><a href="#talento" class="block text-white hover:text-[#F5D061]">Talento</a></li>
+            <li><a href="#contacto" class="block text-white hover:text-[#F5D061]">Contacto</a></li>
+          </ul>
         </div>
       </div>
-    </div>
-  </section>
+    </header>
 
-  
-
-  <!-- Equipo -->
-  <section id="equipo" class="py-16 bg-white">
-    <div class="container mx-auto px-6">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Nuestro <span class="golden-text">Equipo</span></h2>
-        <div class="w-20 h-1 bg-[#E6AF2E] mx-auto"></div>
-        <p class="max-w-2xl mx-auto mt-4 text-gray-600">
-          Profesionales apasionados que hacen posible la magia detrás de cada proyecto.
-        </p>
+    <!-- Hero Section -->
+    <section id="inicio" class="pt-32 pb-20 relative overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-[#282F44] opacity-90"></div>
+        <!-- Aquí iría una imagen de fondo dinámica -->
+        <div class="absolute inset-0 bg-gradient-to-r from-[#282F44] to-transparent"></div>
       </div>
       
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Allyson Diaz -->
-        <div class="team-card bg-[#ECECEC] p-6 rounded-xl text-center">
-          <div class="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-[#E6AF2E]">
-            <!-- Espacio para foto de Allyson Diaz -->
-            <div class="w-full h-full bg-gradient-to-br from-[#282F44] to-[#3a455e] flex items-center justify-center text-white">
-              Allyson Diaz
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 mb-12 md:mb-0">
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+              <span class="text-[#282F44]">Impulsamos</span> <span class="golden-text">tu talento</span>
+            </h2>
+            <p class="text-lg md:text-xl mb-8 text-gray-700">
+              Somos especialistas en manejo de artistas, creación de contenido y producción audiovisual. 
+              Transformamos ideas en realidades impactantes.
+            </p>
+            <div class="flex space-x-4">
+              <a href="#contacto" class="bg-[#E6AF2E] hover:bg-[#F5D061] text-[#282F44] font-bold py-3 px-6 rounded-full transition">
+                Contáctanos
+              </a>
+              <a href="#servicios" class="border-2 border-[#282F44] hover:bg-[#282F44] hover:text-white text-[#282F44] font-bold py-3 px-6 rounded-full transition">
+                Nuestros servicios
+              </a>
             </div>
           </div>
-          <h3 class="text-xl font-bold mb-1">Allyson Diaz</h3>
-          <p class="text-[#E6AF2E] font-medium mb-4">Marketing Media Manager</p>
-          <p class="text-gray-600 text-sm">
-            Especialista en estrategias digitales y crecimiento de audiencias en plataformas sociales.
-          </p>
-          <div class="flex justify-center space-x-3 mt-4">
-            <a href="#" class="text-[#282F44] hover:text-[#E6AF2E]">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="#" class="text-[#282F44] hover:text-[#E6AF2E]">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-          </div>
-        </div>
-        
-        <!-- Diana Sandoval -->
-        <div class="team-card bg-[#ECECEC] p-6 rounded-xl text-center">
-          <div class="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-[#E6AF2E]">
-            <!-- Espacio para foto de Diana Sandoval -->
-            <div class="w-full h-full bg-gradient-to-br from-[#282F44] to-[#3a455e] flex items-center justify-center text-white">
-              Diana Sandoval
+          
+          <div class="md:w-1/2 flex justify-center">
+            <!-- Espacio para imagen representativa o slider -->
+            <div class="flex items-center justify-center">
+              <img src="img/LOGO.png" alt="" class="shadow-2xl shadow-[#E6AF2E]/40 rounded-full" style="width: 300px;">
             </div>
           </div>
-          <h3 class="text-xl font-bold mb-1">Diana Sandoval</h3>
-          <p class="text-[#E6AF2E] font-medium mb-4">Diseñadora Gráfica</p>
-          <p class="text-gray-600 text-sm">
-            Creadora visual con enfoque en branding y diseño para artistas y marcas personales.
-          </p>
-          <div class="flex justify-center space-x-3 mt-4">
-            <a href="#" class="text-[#282F44] hover:text-[#E6AF2E]">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="#" class="text-[#282F44] hover:text-[#E6AF2E]">
-              <i class="fab fa-behance"></i>
-            </a>
-          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video Showcase -->
+    <section id="videos" class="py-16 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Nuestro <span class="golden-text">Trabajo</span></h2>
+          <div class="w-20 h-1 bg-[#E6AF2E] mx-auto"></div>
         </div>
         
-        <!-- Espacio para nuevo miembro del equipo -->
-        <div class="team-card bg-[#ECECEC] p-6 rounded-xl text-center">
-          <div class="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-[#E6AF2E]">
-            <!-- Espacio para foto -->
-            <div class="w-full h-full bg-gradient-to-br from-[#282F44] to-[#3a455e] flex items-center justify-center text-white">
-              Nuevo Miembro
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+          <div class="video-thumbnail hover-grow">
+            <div class="aspect-w-16 aspect-h-9 bg-gray-300 rounded-lg overflow-hidden">
+              <!-- Espacio para thumbnail del video -->
+              <div class="flex items-center justify-center">
+                <video src="video/TRAILER_1.mp4" autoplay muted class="rounded-lg w-full h-auto"></video>
+              </div>
             </div>
           </div>
-          <h3 class="text-xl font-bold mb-1">Nombre Apellido</h3>
-          <p class="text-[#E6AF2E] font-medium mb-4">Posición</p>
-          <p class="text-gray-600 text-sm">
-            Descripcion
+          
+          <div class="video-thumbnail hover-grow">
+            <div class="aspect-w-16 aspect-h-9 bg-gray-300 rounded-lg overflow-hidden">
+              <!-- Espacio para thumbnail del video -->
+              <div class="flex items-center justify-center" style="height: 337px;">
+                <video src="video/PRODUCCION.MOV" autoplay muted class="rounded-lg w-full h-auto"></video>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="text-center">
+          <a href="https://www.youtube.com/" target="_blank" class="inline-flex items-center bg-[#282F44] hover:bg-[#1a1f2e] text-white font-bold py-3 px-6 rounded-full transition">
+            <i class="fab fa-youtube mr-2"></i> Ver más en YouTube
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios" class="py-16 gradient-bg text-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Nuestros <span class="golden-text">Servicios</span></h2>
+          <div class="w-20 h-1 bg-[#E6AF2E] mx-auto"></div>
+          <p class="max-w-2xl mx-auto mt-4 text-[#ECECEC]">
+            Ofrecemos soluciones integrales para potenciar tu presencia artística y digital.
           </p>
-          <div class="flex justify-center space-x-3 mt-4">
-            <a href="#" class="text-[#282F44] hover:text-[#E6AF2E]">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="#" class="text-[#282F44] hover:text-[#E6AF2E]">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div style="background-image: url('img/fondo1.jpeg');
+          background-size: cover;
+          background-position: center;
+          " class="service-card p-8 rounded-lg shadow-lg hover:shadow-2xl hover:border-[#F5D061] transition-all duration-300 bg-white border-l-4 border-[#E6AF2E]">
+            <div class="w-14 h-14 bg-[#E6AF2E] rounded-full flex items-center justify-center mb-6">
+              <i class="fas fa-microphone text-2xl text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3" style="color: #F5D061;">Manejo de Artistas</h3>
+            <p class="" style="color: white">
+              Desarrollo estratégico de carreras artísticas con enfoque personalizado y crecimiento sostenible.
+            </p>
+          </div>
+          
+          <div class="service-card p-8 rounded-lg shadow-lg hover-grow" style="background-image: url('img/fondo2.JPG');
+          background-size: cover;
+          background-position: center;
+          ">
+            <div class="w-14 h-14 bg-[#E6AF2E] rounded-full flex items-center justify-center mb-6">
+              <i class="fas fa-hashtag text-2xl text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3" style="color: #F5D061;">Manejo de Redes Sociales</h3>
+            <p class="text-white">
+              Estrategias de contenido y crecimiento orgánico para maximizar tu impacto en plataformas digitales.
+            </p>
+          </div>
+          
+          <div class="service-card p-8 rounded-lg shadow-lg hover-grow">
+            <div class="w-14 h-14 bg-[#E6AF2E] rounded-full flex items-center justify-center mb-6">
+              <i class="fas fa-photo-video text-2xl text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3" style="color: #F5D061;">Creación de Contenido</h3>
+            <p class="text-white">
+              Producción de material audiovisual de alta calidad que cuenta tu historia de manera auténtica.
+            </p>
+          </div>
+          
+          <div class="service-card p-8 rounded-lg shadow-lg hover-grow">
+            <div class="w-14 h-14 bg-[#E6AF2E] rounded-full flex items-center justify-center mb-6">
+              <i class="fas fa-film text-2xl text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3" style="color: #F5D061;">Producciones Audiovisuales</h3>
+            <p class="text-white">
+              Realización profesional de videos musicales, comerciales y contenido para redes sociales.
+            </p>
+          </div>
+          
+          <div class="service-card p-8 rounded-lg shadow-lg hover-grow">
+            <div class="w-14 h-14 bg-[#E6AF2E] rounded-full flex items-center justify-center mb-6">
+              <i class="fas fa-paint-brush text-2xl text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3" style="color: #F5D061;">Dirección Creativa</h3>
+            <p class="text-white">
+              Conceptualización y desarrollo de identidades visuales únicas para proyectos artísticos.
+            </p>
+          </div>
+          
+          <div class="service-card p-8 rounded-lg shadow-lg hover-grow">
+            <div class="w-14 h-14 bg-[#E6AF2E] rounded-full flex items-center justify-center mb-6">
+              <i class="fas fa-pen-fancy text-2xl text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3" style="color: #F5D061;">Guionismo</h3>
+            <p class="text-white">
+              Creación de narrativas impactantes para tus proyectos audiovisuales y campañas.
+            </p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Talento -->
-  <section id="talento" class="py-16 bg-[#ECECEC]">
-    <div class="container mx-auto px-6">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Nuestro <span class="golden-text">Talento</span></h2>
-        <div class="w-20 h-1 bg-[#E6AF2E] mx-auto"></div>
-        <p class="max-w-2xl mx-auto mt-4 text-gray-600">
-          Artistas y creadores que forman parte de nuestra familia creativa.
-        </p>
-      </div>
-      
-      <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        <!-- Ejemplo de tarjeta de artista -->
-        <div class="bg-white rounded-xl overflow-hidden shadow-md hover-grow">
-          <div class="h-48 bg-gradient-to-br from-[#282F44] to-[#3a455e] flex items-center justify-center text-white">
-            <!-- Espacio para foto del artista -->
-            Artista 1
-          </div>
-          <div class="p-4">
-            <h3 class="font-bold text-lg">Nombre Artista</h3>
-            <p class="text-[#E6AF2E] text-sm">Cantante</p>
-          </div>
-        </div>
-        
-        <!-- Ejemplo de tarjeta de artista -->
-        <div class="bg-white rounded-xl overflow-hidden shadow-md hover-grow">
-          <div class="h-48 bg-gradient-to-br from-[#282F44] to-[#3a455e] flex items-center justify-center text-white">
-            <!-- Espacio para foto del artista -->
-            Artista 2
-          </div>
-          <div class="p-4">
-            <h3 class="font-bold text-lg">Nombre Artista</h3>
-            <p class="text-[#E6AF2E] text-sm">Modelo</p>
-          </div>
-        </div>
-        
-        <!-- Espacio para más artistas -->
-        <div class="bg-white rounded-xl overflow-hidden shadow-md hover-grow">
-          <div class="h-48 bg-gradient-to-br from-[#282F44] to-[#3a455e] flex items-center justify-center text-white">
-            <!-- Espacio para foto del artista -->
-            Artista 3
-          </div>
-          <div class="p-4">
-            <h3 class="font-bold text-lg">Nombre Artista</h3>
-            <p class="text-[#E6AF2E] text-sm">Categoría</p>
-          </div>
-        </div>
-        
-        <div class="bg-white rounded-xl overflow-hidden shadow-md hover-grow">
-          <div class="h-48 bg-gradient-to-br from-[#282F44] to-[#3a455e] flex items-center justify-center text-white">
-            <!-- Espacio para foto del artista -->
-            Artista 4
-          </div>
-          <div class="p-4">
-            <h3 class="font-bold text-lg">Nombre Artista</h3>
-            <p class="text-[#E6AF2E] text-sm">Categoría</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="text-center mt-12">
-        <a href="#contacto" class="inline-flex items-center bg-[#282F44] hover:bg-[#1a1f2e] text-white font-bold py-3 px-6 rounded-full transition">
-          <i class="fas fa-star mr-2"></i> ¿Quieres ser parte de nuestro talento?
-        </a>
-      </div>
-    </div>
-  </section>
+    <!-- CEO Spotlight -->
+    <section class="py-24 bg-[#ECECEC]">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row items-center bg-white rounded-2xl shadow-xl overflow-hidden min-h-[500px]">
+          <div class="md:w-1/3">
+            <!-- Espacio para foto de Mitzy Coreano -->
+            <!-- Carrusel de imágenes CEO -->
+            <div x-data="{
+                images: ['img/jefa1.PNG', 'img/jefa2.PNG'],
+                active: 0,
+                interval: null,
+                next() { this.active = (this.active + 1) % this.images.length },
+                prev() { this.active = (this.active - 1 + this.images.length) % this.images.length },
+                start() { this.interval = setInterval(() => this.next(), 3000) },
+                stop() { clearInterval(this.interval) }
+              }"
+              x-init="start()"
+              @mouseenter="stop()" @mouseleave="start()"
+              class="relative flex items-center justify-center bg-gradient-to-br from-[#E6AF2E] to-[#F5D061]"
+              style="height: 37rem;">
 
-  <!-- Contacto -->
-  <section id="contacto" class="py-16 gradient-bg text-white">
-    <div class="container mx-auto px-6">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Contáct<span class="golden-text">anos</span></h2>
-        <div class="w-20 h-1 bg-[#E6AF2E] mx-auto"></div>
-        <p class="max-w-2xl mx-auto mt-4 text-[#ECECEC]">
-          ¿Listo para llevar tu carrera o proyecto al siguiente nivel? Estamos aquí para ayudarte.
-        </p>
+              <template x-for="(img, i) in images" :key="i">
+                <img x-show="active === i"
+                    :src="img"
+                    class="absolute inset-0 w-full h-full object-cover rounded-xl transition-all duration-700"
+                    x-transition:enter="opacity-0"
+                    x-transition:enter-start="opacity-0"
+                    x-transition:enter-end="opacity-100"
+                    x-transition:leave="opacity-100"
+                    x-transition:leave-start="opacity-100"
+                    x-transition:leave-end="opacity-0"
+                />
+              </template>
+
+              <!-- Botón anterior -->
+              <button @click="prev" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-[#E6AF2E] text-[#282F44] rounded-full p-2 shadow-lg">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <!-- Botón siguiente -->
+              <button @click="next" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-[#E6AF2E] text-[#282F44] rounded-full p-2 shadow-lg">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+          <div class="md:w-2/3 p-10 md:p-16 flex flex-col justify-center">
+            <h3 class="text-3xl font-bold mb-2 golden-text">Mitzy Coreano</h3>
+            <h4 class="text-2xl font-semibold mb-6 text-[#282F44]">Fundadora & CEO</h4>
+            <p class="text-gray-600 mb-6 text-lg">
+              Con más de 10 años de experiencia en la industria del entretenimiento, Mitzy ha dedicado su carrera 
+              al desarrollo de talentos y la creación de contenido innovador. Su visión estratégica y pasión por 
+              el arte han posicionado a MC Management como una de las empresas líderes en producción creativa.
+            </p>
+            <div class="mb-8">
+              <h5 class="text-xl font-bold text-[#E6AF2E] mb-2">Logros destacados</h5>
+              <ul class="list-disc list-inside text-gray-700 text-base">
+                <li>Más de 100 proyectos audiovisuales realizados.</li>
+                <li>Reconocida por su liderazgo en la industria creativa.</li>
+                <li>Mentora de nuevos talentos latinoamericanos.</li>
+              </ul>
+            </div>
+            <blockquote class="italic text-[#282F44] text-lg mb-8 border-l-4 border-[#E6AF2E] pl-4">
+              "El arte es el puente que conecta sueños con realidades."
+            </blockquote>
+            <div class="flex space-x-4">
+              <a href="#" class="text-[#282F44] hover:text-[#E6AF2E]">
+                <i class="fab fa-linkedin-in text-xl"></i>
+              </a>
+              <a href="#" class="text-[#282F44] hover:text-[#E6AF2E]">
+                <i class="fab fa-instagram text-xl"></i>
+              </a>
+              <a href="#" class="text-[#282F44] hover:text-[#E6AF2E]">
+                <i class="fas fa-envelope text-xl"></i>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
-      
-      <div class="flex flex-col lg:flex-row gap-12">
-        <div class="lg:w-1/2">
-          <form class="space-y-6">
-            <div class="grid md:grid-cols-2 gap-6">
+    </section>
+
+    
+
+    <!-- Equipo -->
+    <section id="equipo" class="py-16 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Nuestro <span class="golden-text">Equipo</span></h2>
+          <div class="w-20 h-1 bg-[#E6AF2E] mx-auto"></div>
+          <p class="max-w-2xl mx-auto mt-4 text-gray-600">
+            Profesionales apasionados que hacen posible la magia detrás de cada proyecto.
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Allyson Diaz -->
+          <div class="team-card bg-[#ECECEC] p-6 rounded-xl text-center">
+            <div class="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-[#E6AF2E]">
+              <!-- Espacio para foto de Allyson Diaz -->
+              <div class="w-full h-full bg-gradient-to-br from-[#282F44] to-[#3a455e] flex items-center justify-center text-white">
+                Allyson Diaz
+              </div>
+            </div>
+            <h3 class="text-xl font-bold mb-1">Allyson Diaz</h3>
+            <p class="text-[#E6AF2E] font-medium mb-4">Marketing Media Manager</p>
+            <p class="text-gray-600 text-sm">
+              Especialista en estrategias digitales y crecimiento de audiencias en plataformas sociales.
+            </p>
+            <div class="flex justify-center space-x-3 mt-4">
+              <a href="#" class="text-[#282F44] hover:text-[#E6AF2E]">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="text-[#282F44] hover:text-[#E6AF2E]">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Diana Sandoval -->
+          <div class="team-card bg-[#ECECEC] p-6 rounded-xl text-center">
+            <div class="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-[#E6AF2E]">
+              <!-- Espacio para foto de Diana Sandoval -->
+              <div class="w-full h-full bg-gradient-to-br from-[#282F44] to-[#3a455e] flex items-center justify-center text-white">
+                Diana Sandoval
+              </div>
+            </div>
+            <h3 class="text-xl font-bold mb-1">Diana Sandoval</h3>
+            <p class="text-[#E6AF2E] font-medium mb-4">Diseñadora Gráfica</p>
+            <p class="text-gray-600 text-sm">
+              Creadora visual con enfoque en branding y diseño para artistas y marcas personales.
+            </p>
+            <div class="flex justify-center space-x-3 mt-4">
+              <a href="#" class="text-[#282F44] hover:text-[#E6AF2E]">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="text-[#282F44] hover:text-[#E6AF2E]">
+                <i class="fab fa-behance"></i>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Espacio para nuevo miembro del equipo -->
+          <div class="team-card bg-[#ECECEC] p-6 rounded-xl text-center">
+            <div class="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-[#E6AF2E]">
+              <!-- Espacio para foto -->
+              <div class="w-full h-full bg-gradient-to-br from-[#282F44] to-[#3a455e] flex items-center justify-center text-white">
+                Nuevo Miembro
+              </div>
+            </div>
+            <h3 class="text-xl font-bold mb-1">Nombre Apellido</h3>
+            <p class="text-[#E6AF2E] font-medium mb-4">Posición</p>
+            <p class="text-gray-600 text-sm">
+              Descripcion
+            </p>
+            <div class="flex justify-center space-x-3 mt-4">
+              <a href="#" class="text-[#282F44] hover:text-[#E6AF2E]">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="text-[#282F44] hover:text-[#E6AF2E]">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Talento -->
+    <section id="talento" class="py-16 bg-[#ECECEC]">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Nuestro <span class="golden-text">Talento</span></h2>
+          <div class="w-20 h-1 bg-[#E6AF2E] mx-auto"></div>
+          <p class="max-w-2xl mx-auto mt-4 text-gray-600">
+            Artistas y creadores que forman parte de nuestra familia creativa.
+          </p>
+        </div>
+        
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <!-- Ejemplo de tarjeta de artista -->
+          <div class="bg-white rounded-xl overflow-hidden shadow-md hover-grow">
+            <div class="h-48 bg-gradient-to-br from-[#282F44] to-[#3a455e] flex items-center justify-center text-white">
+              <!-- Espacio para foto del artista -->
+              Artista 1
+            </div>
+            <div class="p-4">
+              <h3 class="font-bold text-lg">Nombre Artista</h3>
+              <p class="text-[#E6AF2E] text-sm">Cantante</p>
+            </div>
+          </div>
+          
+          <!-- Ejemplo de tarjeta de artista -->
+          <div class="bg-white rounded-xl overflow-hidden shadow-md hover-grow">
+            <div class="h-48 bg-gradient-to-br from-[#282F44] to-[#3a455e] flex items-center justify-center text-white">
+              <!-- Espacio para foto del artista -->
+              Artista 2
+            </div>
+            <div class="p-4">
+              <h3 class="font-bold text-lg">Nombre Artista</h3>
+              <p class="text-[#E6AF2E] text-sm">Modelo</p>
+            </div>
+          </div>
+          
+          <!-- Espacio para más artistas -->
+          <div class="bg-white rounded-xl overflow-hidden shadow-md hover-grow">
+            <div class="h-48 bg-gradient-to-br from-[#282F44] to-[#3a455e] flex items-center justify-center text-white">
+              <!-- Espacio para foto del artista -->
+              Artista 3
+            </div>
+            <div class="p-4">
+              <h3 class="font-bold text-lg">Nombre Artista</h3>
+              <p class="text-[#E6AF2E] text-sm">Categoría</p>
+            </div>
+          </div>
+          
+          <div class="bg-white rounded-xl overflow-hidden shadow-md hover-grow">
+            <div class="h-48 bg-gradient-to-br from-[#282F44] to-[#3a455e] flex items-center justify-center text-white">
+              <!-- Espacio para foto del artista -->
+              Artista 4
+            </div>
+            <div class="p-4">
+              <h3 class="font-bold text-lg">Nombre Artista</h3>
+              <p class="text-[#E6AF2E] text-sm">Categoría</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="text-center mt-12">
+          <a href="#contacto" class="inline-flex items-center bg-[#282F44] hover:bg-[#1a1f2e] text-white font-bold py-3 px-6 rounded-full transition">
+            <i class="fas fa-star mr-2"></i> ¿Quieres ser parte de nuestro talento?
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="py-16 gradient-bg text-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Contáct<span class="golden-text">anos</span></h2>
+          <div class="w-20 h-1 bg-[#E6AF2E] mx-auto"></div>
+          <p class="max-w-2xl mx-auto mt-4 text-[#ECECEC]">
+            ¿Listo para llevar tu carrera o proyecto al siguiente nivel? Estamos aquí para ayudarte.
+          </p>
+        </div>
+        
+        <div class="flex flex-col lg:flex-row gap-12">
+          <div class="lg:w-1/2">
+            <form class="space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label for="name" class="block mb-2">Nombre</label>
+                  <input type="text" id="name" class="w-full px-4 py-3 rounded-lg bg-[#3a455e] border border-[#4a5772] focus:outline-none focus:ring-2 focus:ring-[#E6AF2E] text-white" placeholder="Tu nombre">
+                </div>
+                <div>
+                  <label for="email" class="block mb-2">Correo electrónico</label>
+                  <input type="email" id="email" class="w-full px-4 py-3 rounded-lg bg-[#3a455e] border border-[#4a5772] focus:outline-none focus:ring-2 focus:ring-[#E6AF2E] text-white" placeholder="tu@email.com">
+                </div>
+              </div>
               <div>
-                <label for="name" class="block mb-2">Nombre</label>
-                <input type="text" id="name" class="w-full px-4 py-3 rounded-lg bg-[#3a455e] border border-[#4a5772] focus:outline-none focus:ring-2 focus:ring-[#E6AF2E] text-white" placeholder="Tu nombre">
+                <label for="subject" class="block mb-2">Asunto</label>
+                <input type="text" id="subject" class="w-full px-4 py-3 rounded-lg bg-[#3a455e] border border-[#4a5772] focus:outline-none focus:ring-2 focus:ring-[#E6AF2E] text-white" placeholder="¿Cómo podemos ayudarte?">
               </div>
               <div>
-                <label for="email" class="block mb-2">Correo electrónico</label>
-                <input type="email" id="email" class="w-full px-4 py-3 rounded-lg bg-[#3a455e] border border-[#4a5772] focus:outline-none focus:ring-2 focus:ring-[#E6AF2E] text-white" placeholder="tu@email.com">
+                <label for="message" class="block mb-2">Mensaje</label>
+                <textarea id="message" rows="5" class="w-full px-4 py-3 rounded-lg bg-[#3a455e] border border-[#4a5772] focus:outline-none focus:ring-2 focus:ring-[#E6AF2E] text-white" placeholder="Cuéntanos sobre tu proyecto..."></textarea>
               </div>
-            </div>
-            <div>
-              <label for="subject" class="block mb-2">Asunto</label>
-              <input type="text" id="subject" class="w-full px-4 py-3 rounded-lg bg-[#3a455e] border border-[#4a5772] focus:outline-none focus:ring-2 focus:ring-[#E6AF2E] text-white" placeholder="¿Cómo podemos ayudarte?">
-            </div>
-            <div>
-              <label for="message" class="block mb-2">Mensaje</label>
-              <textarea id="message" rows="5" class="w-full px-4 py-3 rounded-lg bg-[#3a455e] border border-[#4a5772] focus:outline-none focus:ring-2 focus:ring-[#E6AF2E] text-white" placeholder="Cuéntanos sobre tu proyecto..."></textarea>
-            </div>
-            <button type="submit" class="w-full bg-[#E6AF2E] hover:bg-[#F5D061] text-[#282F44] font-bold py-3 px-6 rounded-lg transition">
-              Enviar Mensaje
-            </button>
-          </form>
-        </div>
-        
-        <div class="lg:w-1/2">
-          <div class="bg-[#3a455e] p-8 rounded-xl h-full">
-            <h3 class="text-xl font-bold mb-6">Información de contacto</h3>
-            
-            <div class="space-y-6">
-              <div class="flex items-start">
-                <div class="w-10 h-10 bg-[#E6AF2E] rounded-full flex items-center justify-center mr-4 mt-1">
-                  <i class="fas fa-map-marker-alt text-white"></i>
-                </div>
-                <div>
-                  <h4 class="font-bold mb-1">Ubicación</h4>
-                  <p class="text-[#ECECEC]">Bogotá, Colombia</p>
-                </div>
-              </div>
+              <button type="submit" class="w-full bg-[#E6AF2E] hover:bg-[#F5D061] text-[#282F44] font-bold py-3 px-6 rounded-lg transition">
+                Enviar Mensaje
+              </button>
+            </form>
+          </div>
+          
+          <div class="lg:w-1/2">
+            <div class="bg-[#3a455e] p-8 rounded-xl h-full">
+              <h3 class="text-xl font-bold mb-6">Información de contacto</h3>
               
-              <div class="flex items-start">
-                <div class="w-10 h-10 bg-[#E6AF2E] rounded-full flex items-center justify-center mr-4 mt-1">
-                  <i class="fas fa-envelope text-white"></i>
+              <div class="space-y-6">
+                <div class="flex items-start">
+                  <div class="w-10 h-10 bg-[#E6AF2E] rounded-full flex items-center justify-center mr-4 mt-1">
+                    <i class="fas fa-map-marker-alt text-white"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold mb-1">Ubicación</h4>
+                    <p class="text-[#ECECEC]">Bogotá, Colombia</p>
+                  </div>
                 </div>
-                <div>
-                  <h4 class="font-bold mb-1">Correo electrónico</h4>
-                  <p class="text-[#ECECEC]">info@mcmanagement.com.co</p>
+                
+                <div class="flex items-start">
+                  <div class="w-10 h-10 bg-[#E6AF2E] rounded-full flex items-center justify-center mr-4 mt-1">
+                    <i class="fas fa-envelope text-white"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold mb-1">Correo electrónico</h4>
+                    <p class="text-[#ECECEC]">info@mcmanagement.com.co</p>
+                  </div>
                 </div>
-              </div>
-              
-              <div class="flex items-start">
-                <div class="w-10 h-10 bg-[#E6AF2E] rounded-full flex items-center justify-center mr-4 mt-1">
-                  <i class="fas fa-phone-alt text-white"></i>
+                
+                <div class="flex items-start">
+                  <div class="w-10 h-10 bg-[#E6AF2E] rounded-full flex items-center justify-center mr-4 mt-1">
+                    <i class="fas fa-phone-alt text-white"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold mb-1">Teléfono</h4>
+                    <p class="text-[#ECECEC]">+57 XXX XXX XXXX</p>
+                  </div>
                 </div>
-                <div>
-                  <h4 class="font-bold mb-1">Teléfono</h4>
-                  <p class="text-[#ECECEC]">+57 XXX XXX XXXX</p>
-                </div>
-              </div>
-              
-              <div class="flex items-start">
-                <div class="w-10 h-10 bg-[#E6AF2E] rounded-full flex items-center justify-center mr-4 mt-1">
-                  <i class="fab fa-instagram text-white"></i>
-                </div>
-                <div>
-                  <h4 class="font-bold mb-1">Redes Sociales</h4>
-                  <div class="flex space-x-4">
-                    <a href="https://www.instagram.com/mcmanagementproductions?igsh=Nmtyc2xiMGEyNXow" target="_blank" class="text-[#ECECEC] hover:text-[#F5D061]">
-                      <i class="fab fa-instagram text-xl"></i>
-                    </a>
-                    <a href="#" class="text-[#ECECEC] hover:text-[#F5D061]">
-                      <i class="fab fa-youtube text-xl"></i>
-                    </a>
-                    <a href="#" class="text-[#ECECEC] hover:text-[#F5D061]">
-                      <i class="fab fa-facebook-f text-xl"></i>
-                    </a>
+                
+                <div class="flex items-start">
+                  <div class="w-10 h-10 bg-[#E6AF2E] rounded-full flex items-center justify-center mr-4 mt-1">
+                    <i class="fab fa-instagram text-white"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold mb-1">Redes Sociales</h4>
+                    <div class="flex space-x-4">
+                      <a href="https://www.instagram.com/mcmanagementproductions?igsh=Nmtyc2xiMGEyNXow" target="_blank" class="text-[#ECECEC] hover:text-[#F5D061]">
+                        <i class="fab fa-instagram text-xl"></i>
+                      </a>
+                      <a href="#" class="text-[#ECECEC] hover:text-[#F5D061]">
+                        <i class="fab fa-youtube text-xl"></i>
+                      </a>
+                      <a href="#" class="text-[#ECECEC] hover:text-[#F5D061]">
+                        <i class="fab fa-facebook-f text-xl"></i>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -657,77 +685,77 @@
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer class="bg-[#1a1f2e] text-white py-8">
-    <div class="container mx-auto px-6">
-      <div class="flex flex-col md:flex-row justify-between items-center">
-        <div class="mb-6 md:mb-0">
-          <div class="flex items-center space-x-2">
-            <div class="w-8 h-8 rounded-full bg-[#E6AF2E] flex items-center justify-center">
-              <span class="font-bold text-xs text-[#282F44]">MC</span>
+    <!-- Footer -->
+    <footer class="bg-[#1a1f2e] text-white py-8">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-6 md:mb-0">
+            <div class="flex items-center space-x-2">
+              <div class="w-8 h-8 rounded-full bg-[#E6AF2E] flex items-center justify-center">
+                <span class="font-bold text-xs text-[#282F44]">MC</span>
+              </div>
+              <h2 class="text-xl font-bold">MC <span class="golden-text">Management</span></h2>
             </div>
-            <h2 class="text-xl font-bold">MC <span class="golden-text">Management</span></h2>
+            <p class="mt-2 text-sm text-[#ECECEC]">Producciones creativas que inspiran.</p>
           </div>
-          <p class="mt-2 text-sm text-[#ECECEC]">Producciones creativas que inspiran.</p>
+          
+          <div class="flex space-x-6">
+            <a href="#inicio" class="hover:text-[#F5D061]">Inicio</a>
+            <a href="#servicios" class="hover:text-[#F5D061]">Servicios</a>
+            <a href="#equipo" class="hover:text-[#F5D061]">Equipo</a>
+            <a href="#contacto" class="hover:text-[#F5D061]">Contacto</a>
+          </div>
         </div>
         
-        <div class="flex space-x-6">
-          <a href="#inicio" class="hover:text-[#F5D061]">Inicio</a>
-          <a href="#servicios" class="hover:text-[#F5D061]">Servicios</a>
-          <a href="#equipo" class="hover:text-[#F5D061]">Equipo</a>
-          <a href="#contacto" class="hover:text-[#F5D061]">Contacto</a>
+        <div class="border-t border-[#3a455e] mt-8 pt-8 text-center text-sm text-[#ECECEC]">
+          <p>&copy; 2025 MC Management Productions. Todos los derechos reservados.</p>
         </div>
       </div>
+    </footer>
+
+    <!-- Video Modal -->
+    <div x-data="{ videoModalOpen: false, videoUrl: '' }" 
+         x-show="videoModalOpen" 
+         @keydown.escape.window="videoModalOpen = false"
+         class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-80 modal"
+         :class="{ 'active': videoModalOpen }"
+         style="display: none;">
+      <div class="relative w-full max-w-4xl modal-content">
+        <button @click="videoModalOpen = false" class="absolute -top-12 right-0 text-white hover:text-[#F5D061]">
+          <i class="fas fa-times text-2xl"></i>
+        </button>
+        <div class="aspect-w-16 aspect-h-9">
+          <iframe class="w-full h-96 rounded-lg" :src="videoUrl" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener('alpine:init', () => {
+        Alpine.data('app', () => ({
+          mobileMenuOpen: false,
+          
+          openVideo(videoId) {
+            this.videoUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+            this.videoModalOpen = true;
+            document.body.style.overflow = 'hidden';
+          },
+          
+          closeVideo() {
+            this.videoModalOpen = false;
+            this.videoUrl = '';
+            document.body.style.overflow = '';
+          }
+        }));
+      });
       
-      <div class="border-t border-[#3a455e] mt-8 pt-8 text-center text-sm text-[#ECECEC]">
-        <p>&copy; 2025 MC Management Productions. Todos los derechos reservados.</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Video Modal -->
-  <div x-data="{ videoModalOpen: false, videoUrl: '' }" 
-       x-show="videoModalOpen" 
-       @keydown.escape.window="videoModalOpen = false"
-       class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-80 modal"
-       :class="{ 'active': videoModalOpen }"
-       style="display: none;">
-    <div class="relative w-full max-w-4xl modal-content">
-      <button @click="videoModalOpen = false" class="absolute -top-12 right-0 text-white hover:text-[#F5D061]">
-        <i class="fas fa-times text-2xl"></i>
-      </button>
-      <div class="aspect-w-16 aspect-h-9">
-        <iframe class="w-full h-96 rounded-lg" :src="videoUrl" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-    </div>
+      // Inicializar Alpine.js
+      document.addEventListener('DOMContentLoaded', () => {
+        // Podrías agregar aquí cualquier inicialización adicional que necesites
+      });
+    </script>
   </div>
-
-  <script>
-    document.addEventListener('alpine:init', () => {
-      Alpine.data('app', () => ({
-        mobileMenuOpen: false,
-        
-        openVideo(videoId) {
-          this.videoUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
-          this.videoModalOpen = true;
-          document.body.style.overflow = 'hidden';
-        },
-        
-        closeVideo() {
-          this.videoModalOpen = false;
-          this.videoUrl = '';
-          document.body.style.overflow = '';
-        }
-      }));
-    });
-    
-    // Inicializar Alpine.js
-    document.addEventListener('DOMContentLoaded', () => {
-      // Podrías agregar aquí cualquier inicialización adicional que necesites
-    });
-  </script>
 </body>
 </html>
