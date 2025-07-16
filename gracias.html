@@ -14,7 +14,10 @@
     }, 5000);
   </script>
 </head>
-<body class="bg-[#ECECEC] text-[#282F44] flex items-center justify-center min-h-screen">
+<body class="bg-[#ECECEC] text-[#282F44] flex items-center justify-center min-h-screen"style="background-image: url('img/1.jpg');
+          background-size: cover;
+          background-position: center;
+          ">
   <div class="bg-white rounded-2xl shadow-2xl p-10 max-w-lg w-full text-center">
     <div class="flex flex-col items-center mb-6">
       <img src="img/LOGO.png" alt="MC Management Logo" class="w-20 h-20 rounded-full shadow-lg mb-4">
@@ -25,10 +28,27 @@
     <div class="flex justify-center mb-6">
       <div class="w-full h-1 bg-gradient-to-r from-[#FBB034] to-[#FFDD00] rounded-full"></div>
     </div>
-    <p class="text-gray-500 text-sm mb-4">Serás redirigido a la página principal en 5 segundos.</p>
+    <p class="text-gray-500 text-sm mb-4">
+      Serás redirigido a la página principal en <span id="countdown" class="font-bold text-[#E6AF2E]">5</span> segundos.
+    </p>
     <a href="index.html" class="inline-block bg-[#FBB034] hover:bg-[#FFDD00] text-white font-semibold py-2 px-4 rounded-full transition-all duration-300">
       Volver a la página principal
     </a>
   </div>
+  <script>
+    let seconds = 5;
+    const countdown = document.getElementById('countdown');
+    const interval = setInterval(() => {
+      seconds--;
+      if (seconds > 0) {
+        countdown.textContent = seconds;
+      } else {
+        clearInterval(interval);
+      }
+    }, 1000);
+    setTimeout(function() {
+      window.location.href = "index.html";
+    }, 5000);
+  </script>
 </body>
 </html>
