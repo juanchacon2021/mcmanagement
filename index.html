@@ -5,151 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="MC Management Productions - Impulsamos tu talento con servicios de manejo de artistas, creación de contenido y producción audiovisual." />
   <title>MC Management Productions</title>
+  <link rel="icon" type="image/png" href="img/LOGO.png">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.0/dist/cdn.min.js" defer></script>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-    
-    body {
-      font-family: 'Poppins', sans-serif;
-      scroll-behavior: smooth;
-    }
-    
-    /* Fondo oscuro para la card de servicio */
-    .service-card {
-      position: relative;
-      /* ...otros estilos existentes... */
-    }
-
-    .service-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.7); /* Opacidad más alta para oscurecer */
-      z-index: 1;
-      border-radius: 0.5rem; /* igual que rounded-lg */
-    }
-
-    .service-card > * {
-      position: relative;
-      z-index: 2;
-    }
-
-    .gradient-bg {
-      background: linear-gradient(135deg, #282F44 0%, #1a1f2e 100%);
-    }
-    
-    .golden-text {
-      background: linear-gradient(90deg, #E6AF2E, #F5D061);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-    
-    .hover-grow {
-      transition: transform 0.3s ease;
-    }
-    
-    .hover-grow:hover {
-      transform: scale(1.05);
-    }
-    
-    .video-thumbnail {
-      position: relative;
-      overflow: hidden;
-      border-radius: 12px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    }
-    
-    .video-thumbnail::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(40, 47, 68, 0.4);
-      transition: background 0.3s ease;
-    }
-    
-    .video-thumbnail:hover::after {
-      background: rgba(40, 47, 68, 0.2);
-    }
-    
-    .play-icon {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 60px;
-      height: 60px;
-      background: rgba(230, 175, 46, 0.8);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 2;
-      transition: all 0.3s ease;
-    }
-    
-    .video-thumbnail:hover .play-icon {
-      background: rgba(230, 175, 46, 1);
-      transform: translate(-50%, -50%) scale(1.1);
-    }
-    
-    .team-card {
-      transition: all 0.3s ease;
-      border: 2px solid transparent;
-    }
-    
-    .team-card:hover {
-      border-color: #E6AF2E;
-      box-shadow: 0 10px 25px rgba(230, 175, 46, 0.2);
-    }
-    
-    .nav-link {
-      position: relative;
-    }
-    
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: #F5D061;
-      transition: width 0.3s ease;
-    }
-    
-    .nav-link:hover::after {
-      width: 100%;
-    }
-    
-    .service-card {
-      background: linear-gradient(145deg, #ffffff 0%, #f5f5f5 100%);
-      border-left: 4px solid #E6AF2E;
-    }
-    
-    .modal {
-      transition: opacity 0.3s ease, visibility 0.3s ease;
-    }
-    
-    .modal-content {
-      transform: scale(0.9);
-      transition: transform 0.3s ease;
-    }
-    
-    .modal.active {
-      opacity: 1;
-      visibility: visible;
-    }
-    
-    .modal.active .modal-content {
-      transform: scale(1);
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-[#ECECEC] text-[#282F44]">
   <div x-data="{ mobileMenuOpen: false }">
@@ -286,7 +146,7 @@
         </div>
         
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div style="background-image: url('img/fondo1.jpeg');
+          <div style="background-image: url('img/1.jpg');
           background-size: cover;
           background-position: center;
           " class="service-card p-8 rounded-lg shadow-lg hover:shadow-2xl hover:border-[#F5D061] transition-all duration-300 bg-white border-l-4 border-[#E6AF2E]">
@@ -299,7 +159,7 @@
             </p>
           </div>
           
-          <div class="service-card p-8 rounded-lg shadow-lg hover-grow" style="background-image: url('img/fondo2.JPG');
+          <div class="service-card p-8 rounded-lg shadow-lg hover-grow" style="background-image: url('img/6.jpg');
           background-size: cover;
           background-position: center;
           ">
@@ -312,7 +172,10 @@
             </p>
           </div>
           
-          <div class="service-card p-8 rounded-lg shadow-lg hover-grow">
+          <div class="service-card p-8 rounded-lg shadow-lg hover-grow" style="background-image: url('img/5.jpg');
+          background-size: cover;
+          background-position: center;
+          ">
             <div class="w-14 h-14 bg-[#E6AF2E] rounded-full flex items-center justify-center mb-6">
               <i class="fas fa-photo-video text-2xl text-white"></i>
             </div>
@@ -322,7 +185,10 @@
             </p>
           </div>
           
-          <div class="service-card p-8 rounded-lg shadow-lg hover-grow">
+          <div class="service-card p-8 rounded-lg shadow-lg hover-grow" style="background-image: url('img/4.jpg');
+          background-size: cover;
+          background-position: center;
+          ">
             <div class="w-14 h-14 bg-[#E6AF2E] rounded-full flex items-center justify-center mb-6">
               <i class="fas fa-film text-2xl text-white"></i>
             </div>
@@ -332,7 +198,10 @@
             </p>
           </div>
           
-          <div class="service-card p-8 rounded-lg shadow-lg hover-grow">
+          <div class="service-card p-8 rounded-lg shadow-lg hover-grow" style="background-image: url('img/3.jpg');
+          background-size: cover;
+          background-position: center;
+          ">
             <div class="w-14 h-14 bg-[#E6AF2E] rounded-full flex items-center justify-center mb-6">
               <i class="fas fa-paint-brush text-2xl text-white"></i>
             </div>
@@ -342,7 +211,10 @@
             </p>
           </div>
           
-          <div class="service-card p-8 rounded-lg shadow-lg hover-grow">
+          <div class="service-card p-8 rounded-lg shadow-lg hover-grow" style="background-image: url('img/2.jpg');
+          background-size: cover;
+          background-position: center;
+          ">
             <div class="w-14 h-14 bg-[#E6AF2E] rounded-full flex items-center justify-center mb-6">
               <i class="fas fa-pen-fancy text-2xl text-white"></i>
             </div>
@@ -453,7 +325,7 @@
             <div class="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-[#E6AF2E]">
               <!-- Espacio para foto de Allyson Diaz -->
               <div class="w-full h-full bg-gradient-to-br from-[#282F44] to-[#3a455e] flex items-center justify-center text-white">
-                Allyson Diaz
+                <img src="img/allyson.JPG" alt="">
               </div>
             </div>
             <h3 class="text-xl font-bold mb-1">Allyson Diaz</h3>
@@ -474,7 +346,7 @@
           <!-- Diana Sandoval -->
           <div class="team-card bg-[#ECECEC] p-6 rounded-xl text-center">
             <div class="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-[#E6AF2E]">
-              <!-- Espacio para foto de Diana Sandoval -->
+              <img src="img/Diana.jpeg" alt="">
               <div class="w-full h-full bg-gradient-to-br from-[#282F44] to-[#3a455e] flex items-center justify-center text-white">
                 Diana Sandoval
               </div>
@@ -497,15 +369,47 @@
           <!-- Espacio para nuevo miembro del equipo -->
           <div class="team-card bg-[#ECECEC] p-6 rounded-xl text-center">
             <div class="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-[#E6AF2E]">
-              <!-- Espacio para foto -->
-              <div class="w-full h-full bg-gradient-to-br from-[#282F44] to-[#3a455e] flex items-center justify-center text-white">
-                Nuevo Miembro
-              </div>
+              <img src="img/Heriberto.JPG" alt="">
             </div>
-            <h3 class="text-xl font-bold mb-1">Nombre Apellido</h3>
-            <p class="text-[#E6AF2E] font-medium mb-4">Posición</p>
+            <h3 class="text-xl font-bold mb-1">Heriberto Ruiz</h3>
+            <p class="text-[#E6AF2E] font-medium mb-4">Staff y Director Creativo</p>
             <p class="text-gray-600 text-sm">
-              Descripcion
+                Creativo audiovisual con experiencia en dirección de proyectos, enfocado en lograr resultados innovadores de alta calidad.
+            </p>
+            <div class="flex justify-center space-x-3 mt-4">
+              <a href="#" class="text-[#282F44] hover:text-[#E6AF2E]">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="text-[#282F44] hover:text-[#E6AF2E]">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-card bg-[#ECECEC] p-6 rounded-xl text-center">
+            <div class="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-[#E6AF2E]">
+              <img src="img/Daniel.jpg" alt="">
+            </div>
+            <h3 class="text-xl font-bold mb-1">Daniel Melendez</h3>
+            <p class="text-gray-600 text-sm">Producción, fotografía, dirección y edición de proyectos audiovisuales. Experto en transformar ideas en piezas visuales de alto impacto.</p>
+            <div class="flex justify-center space-x-3 mt-4">
+              <a href="#" class="text-[#282F44] hover:text-[#E6AF2E]">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="text-[#282F44] hover:text-[#E6AF2E]">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-card bg-[#ECECEC] p-6 rounded-xl text-center">
+            <div class="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-[#E6AF2E]">
+              <img src="img/mkagency.png" alt="">
+            </div>
+            <h3 class="text-xl font-bold mb-1">MK - Agency</h3>
+            <p class="text-[#E6AF2E] font-medium mb-4">Director Jader Caro</p>
+            <p class="text-gray-600 text-sm">
+              Agencia creativa experta en, producción de contenido y campañas innovadoras para marcas y artistas en el mundo digital.
             </p>
             <div class="flex justify-center space-x-3 mt-4">
               <a href="#" class="text-[#282F44] hover:text-[#E6AF2E]">
@@ -536,23 +440,22 @@
           <div class="bg-white rounded-xl overflow-hidden shadow-md hover-grow">
             <div class="h-48 bg-gradient-to-br from-[#282F44] to-[#3a455e] flex items-center justify-center text-white">
               <!-- Espacio para foto del artista -->
-              Artista 1
+              <img src="img/fondo1.jpeg" alt="">
             </div>
             <div class="p-4">
-              <h3 class="font-bold text-lg">Nombre Artista</h3>
-              <p class="text-[#E6AF2E] text-sm">Cantante</p>
+              <h3 class="font-bold text-lg text-white">@cuppioficial</h3>
+              <p class="text-[#E6AF2E] text-sm text-white">Cantante - Compositor</p>
             </div>
           </div>
           
           <!-- Ejemplo de tarjeta de artista -->
           <div class="bg-white rounded-xl overflow-hidden shadow-md hover-grow">
             <div class="h-48 bg-gradient-to-br from-[#282F44] to-[#3a455e] flex items-center justify-center text-white">
-              <!-- Espacio para foto del artista -->
-              Artista 2
+              <img src="img/isabel.JPG" alt="">
             </div>
             <div class="p-4">
-              <h3 class="font-bold text-lg">Nombre Artista</h3>
-              <p class="text-[#E6AF2E] text-sm">Modelo</p>
+              <h3 class="font-bold text-lg text-white">Isabella Molina</h3>
+              <p class="text-[#E6AF2E] text-sm text-white">Modelo</p>
             </div>
           </div>
           
@@ -560,11 +463,11 @@
           <div class="bg-white rounded-xl overflow-hidden shadow-md hover-grow">
             <div class="h-48 bg-gradient-to-br from-[#282F44] to-[#3a455e] flex items-center justify-center text-white">
               <!-- Espacio para foto del artista -->
-              Artista 3
+              <img src="img/" alt="">
             </div>
             <div class="p-4">
-              <h3 class="font-bold text-lg">Nombre Artista</h3>
-              <p class="text-[#E6AF2E] text-sm">Categoría</p>
+              <h3 class="font-bold text-lg text-white">Artista</h3>
+              <p class="text-[#E6AF2E] text-sm text-white">Profesion</p>
             </div>
           </div>
           
@@ -637,7 +540,7 @@
                   </div>
                   <div>
                     <h4 class="font-bold mb-1">Ubicación</h4>
-                    <p class="text-[#ECECEC]">Bogotá, Colombia</p>
+                    <p class="text-[#ECECEC]">Naguabo 00718, Puerto Rico</p>
                   </div>
                 </div>
                 
@@ -647,7 +550,7 @@
                   </div>
                   <div>
                     <h4 class="font-bold mb-1">Correo electrónico</h4>
-                    <p class="text-[#ECECEC]">info@mcmanagement.com.co</p>
+                    <p class="text-[#ECECEC]">mitzymanagement@gmail.com</p>
                   </div>
                 </div>
                 
@@ -657,7 +560,7 @@
                   </div>
                   <div>
                     <h4 class="font-bold mb-1">Teléfono</h4>
-                    <p class="text-[#ECECEC]">+57 XXX XXX XXXX</p>
+                    <p class="text-[#ECECEC]">+1 774 400 2100</p>
                   </div>
                 </div>
                 
@@ -671,10 +574,10 @@
                       <a href="https://www.instagram.com/mcmanagementproductions?igsh=Nmtyc2xiMGEyNXow" target="_blank" class="text-[#ECECEC] hover:text-[#F5D061]">
                         <i class="fab fa-instagram text-xl"></i>
                       </a>
-                      <a href="#" class="text-[#ECECEC] hover:text-[#F5D061]">
+                      <a href="https://www.youtube.com/@mcmanagement_" class="text-[#ECECEC] hover:text-[#F5D061]">
                         <i class="fab fa-youtube text-xl"></i>
                       </a>
-                      <a href="#" class="text-[#ECECEC] hover:text-[#F5D061]">
+                      <a href="https://www.facebook.com/profile.php?id=100090435511229" class="text-[#ECECEC] hover:text-[#F5D061]">
                         <i class="fab fa-facebook-f text-xl"></i>
                       </a>
                     </div>
@@ -731,31 +634,7 @@
         </div>
       </div>
     </div>
-
-    <script>
-      document.addEventListener('alpine:init', () => {
-        Alpine.data('app', () => ({
-          mobileMenuOpen: false,
-          
-          openVideo(videoId) {
-            this.videoUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
-            this.videoModalOpen = true;
-            document.body.style.overflow = 'hidden';
-          },
-          
-          closeVideo() {
-            this.videoModalOpen = false;
-            this.videoUrl = '';
-            document.body.style.overflow = '';
-          }
-        }));
-      });
-      
-      // Inicializar Alpine.js
-      document.addEventListener('DOMContentLoaded', () => {
-        // Podrías agregar aquí cualquier inicialización adicional que necesites
-      });
-    </script>
   </div>
+  <script src="script.js"></script>
 </body>
 </html>

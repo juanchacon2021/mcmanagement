@@ -1,0 +1,140 @@
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+    
+    /* Fondo oscuro para la card de servicio */
+    .service-card {
+      position: relative;
+      /* ...otros estilos existentes... */
+    }
+
+    .service-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.7); /* Opacidad más alta para oscurecer */
+      z-index: 1;
+      border-radius: 0.5rem; /* igual que rounded-lg */
+    }
+
+    .service-card > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    .gradient-bg {
+      background: linear-gradient(135deg, #282F44 0%, #1a1f2e 100%);
+    }
+    
+    .golden-text {
+      background: linear-gradient(90deg, #E6AF2E, #F5D061);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    
+    .hover-grow {
+      transition: transform 0.3s ease;
+    }
+    
+    .hover-grow:hover {
+      transform: scale(1.05);
+    }
+    
+    .video-thumbnail {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    
+    .video-thumbnail::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(40, 47, 68, 0.4);
+      transition: background 0.3s ease;
+    }
+    
+    .video-thumbnail:hover::after {
+      background: rgba(40, 47, 68, 0.2);
+    }
+    
+    .play-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 60px;
+      background: rgba(230, 175, 46, 0.8);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      transition: all 0.3s ease;
+    }
+    
+    .video-thumbnail:hover .play-icon {
+      background: rgba(230, 175, 46, 1);
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+    
+    .team-card {
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+    
+    .team-card:hover {
+      border-color: #E6AF2E;
+      box-shadow: 0 10px 25px rgba(230, 175, 46, 0.2);
+    }
+    
+    .nav-link {
+      position: relative;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #F5D061;
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    
+    .service-card {
+      background: linear-gradient(145deg, #ffffff 0%, #f5f5f5 100%);
+      border-left: 4px solid #E6AF2E;
+    }
+    
+    .modal {
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    
+    .modal-content {
+      transform: scale(0.9);
+      transition: transform 0.3s ease;
+    }
+    
+    .modal.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .modal.active .modal-content {
+      transform: scale(1);
+    }
