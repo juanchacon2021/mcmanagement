@@ -425,7 +425,7 @@
     </section>
 
     <!-- Talento -->
-    <section id="talento" class="py-16 bg-[#ECECEC]">
+    <section id="talento" class="py-8 bg-[#ECECEC]">
       <div class="container mx-auto px-6">
         <div class="text-center mb-16">
           <h2 class="text-3xl md:text-4xl font-bold mb-4">Nuestro <span class="golden-text">Talento</span></h2>
@@ -435,56 +435,36 @@
           </p>
         </div>
         
-        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          <!-- Ejemplo de tarjeta de artista -->
-          <div class="bg-white rounded-xl overflow-hidden shadow-md hover-grow">
-            <div class="h-48 bg-gradient-to-br from-[#282F44] to-[#3a455e] flex items-center justify-center text-white">
-              <!-- Espacio para foto del artista -->
-              <img src="img/fondo1.jpeg" alt="">
+        <div class="flex justify-center">
+          <div class="grid sm:grid-cols-2 gap-8" style="width: 45rem;">
+            <!-- Tarjetas de artista aquí -->
+            <!-- Ejemplo de tarjeta de artista -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-md hover-grow">
+              <div class="h-72 bg-gradient-to-br from-[#282F44] to-[#3a455e] flex items-center justify-center text-white">
+                <!-- Espacio para foto del artista -->
+                <img src="img/fondo1.jpeg" alt="">
+              </div>
+              <div class="p-4">
+                <h3 class="font-bold text-lg text-white">@cuppioficial</h3>
+                <p class="text-[#E6AF2E] text-sm text-white">Cantante - Compositor</p>
+              </div>
             </div>
-            <div class="p-4">
-              <h3 class="font-bold text-lg text-white">@cuppioficial</h3>
-              <p class="text-[#E6AF2E] text-sm text-white">Cantante - Compositor</p>
-            </div>
-          </div>
-          
-          <!-- Ejemplo de tarjeta de artista -->
-          <div class="bg-white rounded-xl overflow-hidden shadow-md hover-grow">
-            <div class="h-48 bg-gradient-to-br from-[#282F44] to-[#3a455e] flex items-center justify-center text-white">
-              <img src="img/isabel.JPG" alt="">
-            </div>
-            <div class="p-4">
-              <h3 class="font-bold text-lg text-white">Isabella Molina</h3>
-              <p class="text-[#E6AF2E] text-sm text-white">Modelo</p>
-            </div>
-          </div>
-          
-          <!-- Espacio para más artistas -->
-          <div class="bg-white rounded-xl overflow-hidden shadow-md hover-grow">
-            <div class="h-48 bg-gradient-to-br from-[#282F44] to-[#3a455e] flex items-center justify-center text-white">
-              <!-- Espacio para foto del artista -->
-              <img src="img/" alt="">
-            </div>
-            <div class="p-4">
-              <h3 class="font-bold text-lg text-white">Artista</h3>
-              <p class="text-[#E6AF2E] text-sm text-white">Profesion</p>
-            </div>
-          </div>
-          
-          <div class="bg-white rounded-xl overflow-hidden shadow-md hover-grow">
-            <div class="h-48 bg-gradient-to-br from-[#282F44] to-[#3a455e] flex items-center justify-center text-white">
-              <!-- Espacio para foto del artista -->
-              Artista 4
-            </div>
-            <div class="p-4">
-              <h3 class="font-bold text-lg">Nombre Artista</h3>
-              <p class="text-[#E6AF2E] text-sm">Categoría</p>
+            
+            <!-- Ejemplo de tarjeta de artista -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-md hover-grow">
+              <div class="h-72 bg-gradient-to-br from-[#282F44] to-[#3a455e] flex items-center justify-center text-white">
+                <img src="img/isabel.JPG" alt="">
+              </div>
+              <div class="p-4">
+                <h3 class="font-bold text-lg text-white">Isabella Molina</h3>
+                <p class="text-[#E6AF2E] text-sm text-white">Modelo</p>
+              </div>
             </div>
           </div>
         </div>
         
         <div class="text-center mt-12">
-          <a href="#contacto" class="inline-flex items-center bg-[#282F44] hover:bg-[#1a1f2e] text-white font-bold py-3 px-6 rounded-full transition">
+          <a href="#contacto" class="inline-flex items-center bg-[#282F44] hover:bg-[#1a1f2e] text-black font-bold py-3 px-6 rounded-full transition">
             <i class="fas fa-star mr-2"></i> ¿Quieres ser parte de nuestro talento?
           </a>
         </div>
@@ -590,36 +570,17 @@
             </div>
           </div>
         </div>
+        
+        <!-- Mapa de Google Maps -->
+        <div class="mt-12 rounded-xl overflow-hidden shadow-lg">
+          <iframe 
+            src="https://www.google.com/maps?q=Naguabo+00718,+Puerto+Rico&output=embed"
+            width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-[#1a1f2e] text-white py-8">
-      <div class="container mx-auto px-6">
-        <div class="flex flex-col md:flex-row justify-between items-center">
-          <div class="mb-6 md:mb-0">
-            <div class="flex items-center space-x-2">
-              <div class="w-8 h-8 rounded-full bg-[#E6AF2E] flex items-center justify-center">
-                <span class="font-bold text-xs text-[#282F44]">MC</span>
-              </div>
-              <h2 class="text-xl font-bold">MC <span class="golden-text">Management</span></h2>
-            </div>
-            <p class="mt-2 text-sm text-[#ECECEC]">Producciones creativas que inspiran.</p>
-          </div>
-          
-          <div class="flex space-x-6">
-            <a href="#inicio" class="hover:text-[#F5D061]">Inicio</a>
-            <a href="#servicios" class="hover:text-[#F5D061]">Servicios</a>
-            <a href="#equipo" class="hover:text-[#F5D061]">Equipo</a>
-            <a href="#contacto" class="hover:text-[#F5D061]">Contacto</a>
-          </div>
-        </div>
-        
-        <div class="border-t border-[#3a455e] mt-8 pt-8 text-center text-sm text-[#ECECEC]">
-          <p>&copy; 2025 MC Management Productions. Todos los derechos reservados.</p>
-        </div>
-      </div>
-    </footer>
 
     <!-- Video Modal -->
     <div x-data="{ videoModalOpen: false, videoUrl: '' }" 
@@ -639,5 +600,56 @@
     </div>
   </div>
   <script src="script.js"></script>
+
+  <!-- Footer -->
+<footer class="text-white py-12" style="background-color: #e8b233;">
+  <div class="container mx-auto px-6">
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
+      <!-- Logo y derechos -->
+      <div class="flex-1 flex flex-col items-center md:items-start mb-8 md:mb-0">
+        <img src="img/LOGO.png" alt="MC Management Logo" class="w-28 mb-4">
+        <h2 class="text-2xl font-bold mb-2">MC MANAGEMENT</h2>
+        <p class="mb-2">MC MANAGEMENT LLC. 2025 ©</p>
+        <p class="mb-4">All Copyright Reserved</p>
+        <div class="text-sm space-y-1">
+          <strong><p>Mitzy Coreano</p></strong>
+        </div>
+        <div class="flex space-x-4 mt-6">
+          <a href="https://www.instagram.com/mcmanagementproductions?igsh=Nmtyc2xiMGEyNXow" target="_blank" class="text-[#E6AF2E] hover:text-white text-2xl"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@mcmanagement_" target="_blank" class="text-[#E6AF2E] hover:text-white text-2xl"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=100090435511229" target="_blank" class="text-[#E6AF2E] hover:text-white text-2xl"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+      <!-- Navegación -->
+      <div class="flex-1 mb-8 md:mb-0">
+        <h3 class="font-bold mb-4">MC MANAGEMENT</h3>
+        <ul class="space-y-2">
+          <li><a href="#inicio" class="hover:text-[#E6AF2E]">Inicio</a></li>
+          <li><a href="#servicios" class="hover:text-[#E6AF2E]">Servicios</a></li>
+          <li><a href="#videos" class="hover:text-[#E6AF2E]">Videos</a></li>
+          <li><a href="#equipo" class="hover:text-[#E6AF2E]">Equipo</a></li>
+          <li><a href="#talento" class="hover:text-[#E6AF2E]">Talento</a></li>
+          <li><a href="#contacto" class="hover:text-[#E6AF2E]">Contacto</a></li>
+        </ul>
+      </div>
+      <!-- Contacto -->
+      <div class="flex-1">
+        <h3 class="font-bold mb-4">CONTACTO</h3>
+        <ul class="space-y-2">
+          <li><span class="text-[#E6AF2E]">Instagram:</span> <a href="https://www.instagram.com/mcmanagementproductions?igsh=Nmtyc2xiMGEyNXow" target="_blank" class="hover:text-[#E6AF2E]">@mcmanagementproductions</a></li>
+          <li><span class="text-[#E6AF2E]">YouTube:</span> <a href="https://www.youtube.com/@mcmanagement_" target="_blank" class="hover:text-[#E6AF2E]">@mcmanagement_</a></li>
+          <li><span class="text-[#E6AF2E]">Facebook:</span> <a href="https://www.facebook.com/profile.php?id=100090435511229" target="_blank" class="hover:text-[#E6AF2E]">MC Management</a></li>
+          <li><span class="text-[#E6AF2E]">Email:</span> mitzymanagement@gmail.com</li>
+          <li><span class="text-[#E6AF2E]">Teléfono:</span> +1 774 400 2100</li>
+          <li><span class="text-[#E6AF2E]">Ubicación:</span> Naguabo 00718, Puerto Rico</li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-[#E6AF2E]/30 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center text-sm">
+      <span>&copy; 2025 MC Management Productions. Todos los derechos reservados.</span>
+      <span class="mt-2 md:mt-0">Developed by Juan Chacon 2025</span>
+    </div>
+  </div>
+</footer>
 </body>
 </html>
