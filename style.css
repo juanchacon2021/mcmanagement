@@ -138,3 +138,7 @@
     .modal.active .modal-content {
       transform: scale(1);
     }
+
+    .video-thumbnail::after {
+  pointer-events: none;
+}
